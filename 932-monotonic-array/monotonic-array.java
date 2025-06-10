@@ -4,7 +4,7 @@ public class Solution{
         if(n<2){return true;}
         int order=0;
         if(nums[0]<nums[1]){order=1;}
-        else if(nums[0]<nums[1]){order=2;}
+        else if(nums[0]>nums[1]){order=2;}
         for(int i=0;i<n-1;i++){
             if(nums[i]<nums[i+1]){
                 if(order==0){order=1;}
