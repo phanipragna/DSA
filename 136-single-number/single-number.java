@@ -1,12 +1,13 @@
 class Solution {
     public int singleNumber(int[] nums) {
-        HashMap<Integer,Integer> hm=new HashMap<>();
+        HashSet<Integer> hs=new HashSet<>();
         for(int i:nums){
-            hm.put(i,hm.getOrDefault(i,0)+1);
-        }int c=0;
-        for(Map.Entry<Integer,Integer>  rs : hm.entrySet()){
-            if(rs.getValue()==1)
-    	    c=rs.getKey();
-        }return c;
+            if(hs.contains(i))
+            hs.remove(i);
+            else
+            hs.add(i);
+        }
+        for(int i:hs) return i;
+        return 0;
     }
 }
