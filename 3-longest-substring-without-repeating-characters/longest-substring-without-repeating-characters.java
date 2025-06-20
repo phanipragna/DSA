@@ -6,11 +6,9 @@ class Solution {
             char ch=s.charAt(right);
             while(hs.contains(ch)){
                 hs.remove(s.charAt(left));
-                left++;
-            }
+                left++; }
             hs.add(ch);
-            max=Math.max(max,right-left+1);
-        }
+            max=Math.max(max,right-left+1);}
         return max;
     }
 }
