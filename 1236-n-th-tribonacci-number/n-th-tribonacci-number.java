@@ -1,12 +1,15 @@
 class Solution {
+     static int dp[]=new int[38];
+        static{
+            Arrays.fill(dp,-1);
+        }
     public int tribonacci(int n) {
-        int a[]=new int[38],x=0;
-         a[0]=0;a[1]=1;a[2]=1;
-        if (n == 0) return 0;
-        if (n == 1 || n == 2) return 1;
-        for(int i=3;i<=n;i++){
-            a[i] = a[i - 1] + a[i - 2] + a[i - 3];
-            x=a[i];
-        }return x;
+        if(dp[n]!=-1) return dp[n];
+        else{
+            if(n<2) dp[n]=n;
+            else if(n==2) dp[n]=1;
+            else
+            dp[n]=tribonacci(n-1)+tribonacci(n-2)+tribonacci(n-3);
+        }return dp[n];
     }
 }
